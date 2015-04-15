@@ -53,7 +53,9 @@ $app->reveal();
 
 The url http://localhost/skimpydir/params/hello/world will echo 
 ```html
-Section with params<br>Var1 is helll<br>Var2 is world
+Section with params<br>
+Var1 is hello
+<br>Var2 is world
 ```
 
 ###Apache configuration
