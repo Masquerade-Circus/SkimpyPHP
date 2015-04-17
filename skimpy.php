@@ -19,11 +19,11 @@
 		}
 		
 		public function put($path, $callback){
-			$this->paths->post[$path] = $callback;
+			$this->paths->put[$path] = $callback;
 		}
 		
 		public function delete($path, $callback){
-			$this->paths->post[$path] = $callback;
+			$this->paths->delete[$path] = $callback;
 		}
 		
 		public function reveal() {
