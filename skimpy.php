@@ -12,18 +12,22 @@
 		
 		public function get($path, $callback){
 			$this->paths->get[$path] = $callback;
+			return $this;
 		}
 		
 		public function post($path, $callback){
 			$this->paths->post[$path] = $callback;
+			return $this;
 		}
 		
 		public function put($path, $callback){
 			$this->paths->put[$path] = $callback;
+			return $this;
 		}
 		
 		public function delete($path, $callback){
 			$this->paths->delete[$path] = $callback;
+			return $this;
 		}
 		
 		public function reveal() {
