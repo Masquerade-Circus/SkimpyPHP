@@ -1,5 +1,12 @@
 <?php
+	/**
+	 *  Small URL Routing and Controller micro-framework
+	 *  By Masquerade Circus
+	 *  christian@masquerade-circus.net
+	 *  https://github.com/Masquerade-Circus/SkimpyPHP
+	 */
 	class SkimpyPHP{
+		private $_methods;
 		
 		function __construct(){
 			$this->paths = new stdClass();
@@ -27,6 +34,18 @@
 		
 		public function delete($path, $callback){
 			$this->paths->delete[$path] = $callback;
+			return $this;
+		}
+		
+		function call($name, $params = array()){
+			if (array_key_exists($name,$this->_methods))
+				return call_user_func_array($this->_methods[$name], $params);
+			else
+				throw new Exception("The method '$name' does not exists");
+		}
+		
+		function method($name, $callback){
+			$this->_methods[$name] = $callback;
 			return $this;
 		}
 		
